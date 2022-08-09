@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'App.css';
+import TodoForm from "layout/components/todoForm/TodoForm";
+import {Alert, Container, Typography} from "@mui/material";
+import FrontRoutes from "routes/FrontRoutes"
+import Navigation from "layout/components/navigation/Navigation";
+import {useAppSelector} from "redux/store";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    const {show, type, text} = useAppSelector(state => state.alert);
+
+    return (
+      <Container maxWidth="sm" className={"TodoApp__container"}>
+          <Typography variant={"h2"} align={"center"}>ToDo App</Typography>
+          {show && <Alert severity={type}>{text}</Alert>}
+          <TodoForm/>
+          <Navigation/>
+          <FrontRoutes/>
+      </Container>
   );
 }
 
