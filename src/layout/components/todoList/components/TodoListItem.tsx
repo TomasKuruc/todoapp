@@ -36,7 +36,7 @@ const TodoListItem = (props: Props) => {
     return (
         <ListItem
             secondaryAction={
-                <IconButton edge="end" aria-label="remove todo" onClick={handleRemoveTodo}>
+                <IconButton edge="end" aria-label="remove todo" className={'todo-delete-btn'} onClick={handleRemoveTodo}>
                     <DeleteIcon />
                 </IconButton>
             }

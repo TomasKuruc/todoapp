@@ -12,7 +12,7 @@ const TodoList = (props: Props) => {
     const todos = useAppSelector(state => state.todos.all);
 
     return (
-        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+        <List sx={{ width: '100%', bgcolor: 'background.paper' }} className={'todo-list'}>
             {todos.filter(todo => props.completed ? todo.complete : !todo.complete).map((todo: Todo) => (
                 <TodoListItem key={todo.id} {...todo}/>
             ))}

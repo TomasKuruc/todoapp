@@ -11,6 +11,7 @@ const TodoInput = (props: Props) => {
         <TextField
             {...props.register('title')}
             id="standard-basic"
+            className={"todo-input"}
             label="Type your todo task..."
             autoFocus={true}
             variant="standard" />
