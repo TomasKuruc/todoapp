@@ -14,7 +14,7 @@ const Navigation = (props: Props) => {
             <Tabs value={false} aria-label="nav tabs example">
                 <Tab
                     component="span"
-                    label={`${todosRemains} todos remains`}
+                    label={`${todosRemains} todos remaining`}
                 />
                 <LinkTab label="All" href="/" />
                 <LinkTab label="Completed" href="/completed-todos" />
